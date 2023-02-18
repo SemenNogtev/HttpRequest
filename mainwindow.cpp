@@ -14,18 +14,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButtonG_clicked()
-{
-    Worker worker;
-    worker.get("http://localhost:5500?--altitude=1000");
-}
-
 void MainWindow::on_pushButtonP_clicked()
 {
-    Worker worker;
-    QByteArray data;
-    data.append("=im");
-    worker.post("https://vk.com",data);
+    Worker *worker;
+    worker = new Worker(this);
+    QString location = "http://localhost:8000/json/position/altitude-ft";
+    QString value = "2000";
+    worker->postFG(location,value);
 }
 
 

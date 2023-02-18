@@ -1,6 +1,6 @@
 QT       += core gui
 QT       += network # подключение QNetworkAccessManager Class
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0 # разрешение использовать устаревшие функции (networkAccessibleChanged())
+QT       += quick core network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

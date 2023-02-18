@@ -1,37 +1,28 @@
 #ifndef WORKER_H
 #define WORKER_H
 
+#include <iostream>
+#include <string>
+#include <QString>
 #include <QObject>
-#include <QDebug>
 #include <QNetworkAccessManager>
+#include <QByteArray>
 #include <QNetworkReply>
-#include <QNetworkRequest>
-#include <QAuthenticator>
-#include <QNetworkProxy>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 class Worker: public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Worker(QObject *parent = nullptr);
+    explicit Worker(QObject *parent = 0);
 
 public slots:
-    void get(QString location);
-    void post(QString location, QByteArray data);
-
-private slots:
-    void readyRead();
-    void authenticationRequired(QNetworkReply *reply, QAuthenticator *authenticator);
-    void encrypted(QNetworkReply *reply);
-    void finished(QNetworkReply *reply);
-    void networkAccessibleChanged(QNetworkAccessManager::NetworkAccessibility accessible);
-    void preSharedKeyAuthenticationRequired(QNetworkReply *reply, QSslPreSharedKeyAuthenticator *authenticator);
-    void proxyAuthenticationRequired(const QNetworkProxy &proxy, QAuthenticator *authenticator);
-    void sslErrors(QNetworkReply *reply, const QList<QSslError> &errors);
+    void postFG(QString location, QString value);
 
 private:
-    QNetworkAccessManager manager;
+    QNetworkAccessManager *mgr;
 
 };
 

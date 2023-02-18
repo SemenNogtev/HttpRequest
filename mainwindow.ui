@@ -14,24 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButtonG">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>260</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>GET Request</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButtonP">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>260</y>
+      <x>320</x>
+      <y>250</y>
       <width>111</width>
       <height>31</height>
      </rect>
